@@ -1,22 +1,10 @@
-<div class="title-bar" data-responsive-toggle="example-animated-menu" data-hide-for="medium">
-  <button class="menu-icon" type="button" data-toggle></button>
-  <div class="title-bar-title">Menu</div>
-</div>
 
-<div class="top-bar" id="example-animated-menu" data-animate="hinge-in-from-top spin-out">
-  <div class="top-bar-left">
-    <ul class="dropdown menu" data-dropdown-menu>
-      <li class="menu-text"><a [routerLink]="['/']">Site Title</a></li>
-      <li>
-        <a [routerLink]="['/login']">Login</a>
-        <ul class="menu vertical">
-          <li><a href="#">One</a></li>
-          <li><a href="#">Two</a></li>
-          <li><a href="#">Three</a></li>
-        </ul>
-      </li>
-      <li><a [routerLink]="['/register']">Register</a></li>
-      <li><a href="#">Three</a></li>
-    </ul>
-  </div>
-</div>
+    <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow">
+      <h5 class="my-0 mr-md-auto font-weight-normal">Contacts App</h5>
+      <nav class="my-2 my-md-0 mr-md-3">
+        <a class="p-2 text-dark" [routerLink]="['/']">Home</a>
+        <a class="p-2 text-dark" [routerLink]="['/register']">Register</a>
+        <a class="p-2 text-dark" [routerLink]="['/login']">Login</a>
+      </nav>
+      <a class="btn btn-outline-primary" [routerLink]="['/register']">Register</a>
+    </div>
