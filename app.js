@@ -46,9 +46,9 @@ app.use('/users', users);
 // index
 app.get('/', (req, res) => {
   res.send('Invalid Endpoint');
-})
+});
 
 // start server
 app.listen(port, () =>{
   console.log('Server started on port ' + port);
-})
+});

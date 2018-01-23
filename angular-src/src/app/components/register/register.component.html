@@ -1,26 +1,26 @@
 <div class="container">
   <div class="jumbotron vertical-center">
     <h2>Registration</h2>
-<form>
+<form (submit)="onRegisterSubmit()">
   <div class="form-group">
-    <label for="fname" class="text">First Name</label>
-    <input type="text" class="form-control" placeholder="John">
+    <label class="text">First Name</label>
+    <input type="text" class="form-control" placeholder="John" [(ngModel)]="fname" name="fname">
   </div>
   <div class="form-group">
-    <label for="lname" class="text">Last Name</label>
-    <input type="text" class="form-control" placeholder="Doe">
+    <label class="text">Last Name</label>
+    <input type="text" class="form-control" placeholder="Doe" [(ngModel)]="lname" name="lname">
   </div>
   <div class="form-group">
-    <label for="exampleInputEmail" class="text">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+    <label class="text">Email address</label>
+    <input type="email" class="form-control" aria-describedby="emailHelp" placeholder="Enter email" [(ngModel)]="email" name="email">
   </div>
   <div class="form-group">
-    <label for="username" class="text">Username</label>
-    <input type="text" class="form-control" placeholder="username">
+    <label class="text">Username</label>
+    <input type="text" class="form-control" placeholder="username" [(ngModel)]="username" name="username">
   </div>
   <div class="form-group">
-    <label for="exampleInputPassword" class="text">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+    <label class="text">Password</label>
+    <input type="password" class="form-control" placeholder="Password" [(ngModel)]="password" name="password">
   </div>
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
