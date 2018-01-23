@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ValidateService } from '../../services/validate.service';
+import { AuthenticateService } from '../../services/authenticate.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -15,7 +16,9 @@ export class RegisterComponent implements OnInit {
   password: String;
 
   constructor(
-    private validateService: ValidateService
+    private validateService: ValidateService,
+    private authenticateService: AuthenticateService,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -42,6 +45,16 @@ export class RegisterComponent implements OnInit {
       return false;
     }
 
+    // users
+    this.authenticateService.registerUser(user).subscribe(data => {
+      if(data.success) {
+        console.log('You are now registered and can login');
+        this.router.navigate(['/login']);
+      } else {
+        console.log('You need to register again');
+        this.router.navigate(['/register']);
+      }
+    });
   }
 
 
