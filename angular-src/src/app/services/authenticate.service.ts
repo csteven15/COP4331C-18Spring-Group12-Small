@@ -8,6 +8,7 @@ export class AuthenticateService {
   authenticateToken: any;
   user: any;
   contact: any;
+  friend: any;
 
   constructor(private http:Http) { }
 
@@ -45,6 +46,13 @@ export class AuthenticateService {
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     return this.http.post('http://localhost:3000/users/profile', contact, {headers: headers})
+      .map(res => res.json());
+  }
+
+  addFriend(friend) {
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    return this.http.post('http://localhost:3000/users/profile', friend, {headers: headers})
       .map(res => res.json());
   }
 

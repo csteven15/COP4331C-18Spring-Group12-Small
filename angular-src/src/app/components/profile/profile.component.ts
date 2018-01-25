@@ -35,7 +35,8 @@ export class ProfileComponent implements OnInit {
     }
 
     // contact
-    this.authenticateService.addContact(contact).subscribe(data => {
+    this.authenticateService.addFriend(contact).subscribe(data => {
+    console.log(data.success);
     if(data.success) {
       console.log('Added contact');
       this.router.navigate(['/profile']);
