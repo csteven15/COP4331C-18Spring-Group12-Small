@@ -7,20 +7,21 @@ import { tokenNotExpired } from 'angular2-jwt';
 export class AuthenticateService {
   authenticateToken: any;
   user: any;
+  contact: any;
 
   constructor(private http:Http) { }
 
   registerUser(user) {
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    return this.http.post('users/register', user, {headers: headers})
+    return this.http.post('http://localhost:3000/users/register', user, {headers: headers})
       .map(res => res.json());
   }
 
   authenticateUser(user) {
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    return this.http.post('users/authenticate', user, {headers: headers})
+    return this.http.post('http://localhost:3000/users/authenticate', user, {headers: headers})
       .map(res => res.json());
   }
 
@@ -29,15 +30,22 @@ export class AuthenticateService {
     this.loadToken();
     headers.append('Authorization', this.authenticateToken);
     headers.append('Content-Type', 'application/json');
-    return this.http.get('users/profile', {headers: headers})
+    return this.http.get('http://localhost:3000/users/profile', {headers: headers})
       .map(res => res.json());
   }
 
   storeUserData(token, user) {
     localStorage.setItem('id_token', token);
-    localStorage.setItem('user', JSON.stringify(user));
+    localStorage.setItem('http://localhost:3000/user', JSON.stringify(user));
     this.authenticateToken = token;
     this.user = user;
+  }
+
+  addContact(contact) {
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    return this.http.post('http://localhost:3000/users/profile', contact, {headers: headers})
+      .map(res => res.json());
   }
 
   logOut() {

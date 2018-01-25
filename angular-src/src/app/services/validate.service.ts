@@ -18,4 +18,12 @@ export class ValidateService {
     return re.test(email);
   }
 
+  validateAddContact(contact) {
+    if(contact.fname == undefined || contact.lname == undefined || contact.phone == undefined) {
+      return false;
+    } else {
+      return true;
+    }
+  }
+
 }

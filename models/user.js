@@ -1,20 +1,18 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
 const config = require('../config/database');
+const contact = require('./contact');
 
 // schema
 const UserSchema = mongoose.Schema({
   fname: {
     type: String,
-    required: true
   },
   lname: {
     type: String,
-    required: true
   },
   email: {
     type: String,
-    required: true
   },
   username: {
     type: String,
@@ -23,10 +21,43 @@ const UserSchema = mongoose.Schema({
   password: {
     type: String,
     required: true
+  },
+  contact: {
+    type: mongoose.Schema.Types.ObjectId,
+    required: false,
+    cfname: {
+      type: String,
+      required: true
+    }
+    clname: {
+      type: String,
+      required: true
+    },
+    cphone: {
+      type: String,
+      required: true
+    }
   }
+  /*
+  contacts: [{
+    cfname: {
+      type: String,
+      required: true
+    },
+    clname: {
+      type: String,
+      required: true
+    },
+    cphone: {
+      type: String,
+      required: true
+    }
+  }]
+  */
 });
 
 const User = module.exports = mongoose.model('User', UserSchema);
+const Contact = contact.returnContact();
 
 module.exports.getUserById = function(id, callback){
   User.findById(id, callback);
@@ -52,4 +83,13 @@ module.exports.comparePassword = function(candidatePassword, hash, callback){
     if(err) throw err;
     callback(null, isMatch);
   });
+}
+
+module.exports.addContact = function(newUser, callback) {
+  newUser.contact = Contact.addContact(callback);
+  newUser.save(callback);
+}
+
+module.exports.getContactById = function(id, callback){
+  Contact.findById(id, callback);
 }

@@ -4,6 +4,7 @@ const passport = require('passport');
 const jwt = require('jsonwebtoken');
 const config = require('../config/database');
 const User = require('../models/user');
+const Contact = require('../models/contact');
 
 // register
 router.post('/register', (req, res, next) => {
@@ -67,8 +68,28 @@ router.post('/authenticate', (req, res, next) => {
 });
 
 // profile
-router.get('/profile', passport.authenticate('jwt', {session:false}), (req, res, next) => {
+router.post('/profile', (req, res, next) => {
+  let newContact = new Contact({
+    cfname: req.body.fname,
+    clname: req.body.lname,
+    cphone: req.body.phone
+  });
+
+  console.log(req);
+  console.log(res);
+  console.log(next);
+
+  User.addContact(newContact, (err, user) => {
+    if(err){
+      res.json({success: false, msg: 'Failed to register user'});
+    } else {
+
+      res.json({success: true, msg: 'Contact registered'});
+    }
+  });
+
   res.json({user: req.user});
+
 });
 
 

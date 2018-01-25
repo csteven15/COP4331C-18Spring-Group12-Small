@@ -1,4 +1,4 @@
 module.exports = {
-  database: 'mongodb://<dbuser>:<dbpassword>@ds111568.mlab.com:11568/users',
+  database: 'mongodb://127.0.0.1/users',
   secret: 'secret'
 }
