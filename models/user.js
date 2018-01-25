@@ -28,7 +28,7 @@ const UserSchema = mongoose.Schema({
     cfname: {
       type: String,
       required: true
-    }
+    },
     clname: {
       type: String,
       required: true
