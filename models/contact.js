@@ -4,7 +4,6 @@ const config = require('../config/database');
 
 // schema
 const ContactSchema = mongoose.Schema({
-  _id: mongoose.Schema.Types.ObjectId,
   cfname: {
     type: String,
     required: true

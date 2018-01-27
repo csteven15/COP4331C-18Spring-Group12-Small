@@ -5,13 +5,19 @@ const jwt = require('jsonwebtoken');
 const config = require('../config/database');
 const Contact = require('../models/contact');
 
+// get
+router.get('/contacts', (req, res, next) => {
+  Contact.find(function(err, contacts) {
+    res.json(contacts);
+  });
+});
+
 // add
-router.post('/profile', (req, res, next) => {
-  res.send('Contact');
+router.post('/contacts', (req, res, next) => {
   let newContact = new Contact({
-    fname: req.body.fname,
-    lname: req.body.lname,
-    phone: req.body.phone
+    cfname: req.body.fname,
+    clname: req.body.lname,
+    cphone: req.body.phone
   });
 
   Contact.addContact(newContact, (err, contact) => {
@@ -23,5 +29,17 @@ router.post('/profile', (req, res, next) => {
   });
 
 });
+
+// delete
+router.delete('/contacts/:id', (req, res, next) => {
+  Contact.remove({_id: req.params.id}, function(err, result) {
+    if(err){
+      res.json(err);
+    } else {
+      res.json(result);
+    }
+  })
+})
+
 
 module.exports = router;

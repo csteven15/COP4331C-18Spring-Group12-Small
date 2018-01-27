@@ -24,6 +24,7 @@ const UserSchema = mongoose.Schema({
   },
   contact: {
     type: mongoose.Schema.Types.ObjectId,
+    ref: 'Contact',
     required: false,
     cfname: {
       type: String,
@@ -67,7 +68,6 @@ const UserSchema = mongoose.Schema({
 });
 
 const User = module.exports = mongoose.model('User', UserSchema);
-const Contact = contact.returnContact();
 
 module.exports.getUserById = function(id, callback){
   User.findById(id, callback);
@@ -102,21 +102,4 @@ module.exports.addContact = function(newUser, callback) {
 
 module.exports.getContactById = function(id, callback){
   Contact.findById(id, callback);
-}
-
-// it seems like this is the issue?
-module.exports.addFriend = function(newFriend, callback) {
-  console.log(this);
-  console.log(newFriend);
-  console.log(this.friends);
-  this.friends.push(newFriend);
-  newFriend.save(callback);
-}
-
-module.exports.addFriend2 = function(newFriend, callback) {
-  console.log('Call add friend method');
-  console.log(this);
-  console.log(newFriend);
-  this.friend = newFriend;
-  newFriend.save(callback);
 }

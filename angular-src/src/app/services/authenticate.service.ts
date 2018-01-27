@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Http, Headers } from '@angular/http';
 import 'rxjs/add/operator/map';
 import { tokenNotExpired } from 'angular2-jwt';
+import { Contact } from '../contact';
 
 @Injectable()
 export class AuthenticateService {
@@ -42,10 +43,20 @@ export class AuthenticateService {
     this.user = user;
   }
 
+  getContacts() {
+    return this.http.get('http://localhost:3000/api/contacts')
+      .map(res => res.json());
+  }
+
   addContact(contact) {
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    return this.http.post('http://localhost:3000/users/profile', contact, {headers: headers})
+    return this.http.post('http://localhost:3000/api/contacts', contact, {headers: headers})
+      .map(res => res.json());
+  }
+
+  deleteContact(id) {
+    return this.http.delete('http://localhost:3000/api/contacts/' + id)
       .map(res => res.json());
   }
 

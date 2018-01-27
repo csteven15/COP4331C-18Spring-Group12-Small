@@ -17,7 +17,7 @@ router.post('/register', (req, res, next) => {
     email: req.body.email,
     username: req.body.username,
     password: req.body.password,
-    friends: []
+    contacts: []
   });
 
   User.addUser(newUser, (err, user) => {
@@ -67,51 +67,6 @@ router.post('/authenticate', (req, res, next) => {
       }
     });
   });
-});
-
-// profile
-router.post('/profile', (req, res, next) => {
-  let newFriend = new friendModel({
-    _id : new mongoose.Types.ObjectId(),
-    cfname : req.body.fname,
-    clname : req.body.lname,
-    cphone : req.body.phone
-  });
-
-  console.log('Initialized new friend!')
-  console.log(newFriend);
-
-  User.addFriend2(newFriend, (err, user) =>  {
-    if(err){
-      res.json({success: false, msg: 'Failed to register friend'});
-    } else {
-      res.json({success: true, msg: 'Friend registered'});
-    }
-  });
-
-  res.json({user: req.user});
-
-  // let newContact = new Contact({
-  //   cfname: req.body.fname,
-  //   clname: req.body.lname,
-  //   cphone: req.body.phone
-  // });
-
-  // console.log(req);
-  // console.log(res);
-  // console.log(next);
-
-  // User.addContact(newContact, (err, user) => {
-  //   if(err){
-  //     res.json({success: false, msg: 'Failed to register user'});
-  //   } else {
-
-  //     res.json({success: true, msg: 'Contact registered'});
-  //   }
-  // });
-
-  // res.json({user: req.user});
-
 });
 
 

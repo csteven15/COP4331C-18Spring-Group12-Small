@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AuthenticateService } from '../../services/authenticate.service';
 import { ValidateService } from '../../services/validate.service';
 import { Router } from '@angular/router';
+import { Contact } from '../../contact';
 
 @Component({
   selector: 'app-profile',
@@ -9,6 +10,9 @@ import { Router } from '@angular/router';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
+  user: Object;
+  contacts: Contact[];
+  contact: Contact;
   fname: String;
   lname: String;
   phone: String;
@@ -19,7 +23,28 @@ export class ProfileComponent implements OnInit {
     private router: Router
   ) { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.authenticateService.getProfile().subscribe(profile => {
+      this.user = profile.user;
+    });
+    this.authenticateService.getContacts().subscribe(contacts => {
+      this.contacts = contacts;
+    });
+  }
+
+  deleteContact(id: any) {
+    var contacts = this.contacts;
+    this.authenticateService.deleteContact(id)
+      .subscribe(data => {
+        if(data.n == 1) {
+          for(var i = 0; i < contacts.length; i++) {
+            if(contacts[i]._id == id) {
+              contacts.splice(i, 1);
+            }
+          }
+        }
+      })
+  }
 
   onAddContactSubmit() {
     const contact = {
@@ -35,16 +60,18 @@ export class ProfileComponent implements OnInit {
     }
 
     // contact
-    this.authenticateService.addFriend(contact).subscribe(data => {
-    console.log(data.success);
-    if(data.success) {
-      console.log('Added contact');
-      this.router.navigate(['/profile']);
-    } else {
-      console.log('Failed to add contact');
-      this.router.navigate(['/profile']);
-    }
-  });
+    this.authenticateService.addContact(contact).subscribe(data => {
+      console.log(data.success);
+      this.contacts.push(contact);
+      this.authenticateService.getContacts()
+        .subscribe(contacts =>
+        this.contacts = contacts);
+      if(data.success) {
+        console.log('Added contact');
+      } else {
+        console.log('Failed to add contact');
+      }
+    });
   }
 
 }
