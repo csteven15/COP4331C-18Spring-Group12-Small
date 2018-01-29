@@ -62,7 +62,8 @@ export class ProfileComponent implements OnInit {
 
     // contact
     this.authenticateService.addContact(contact).subscribe(data => {
-      this.user.contacts.push(contact);
+      //this.user.contacts.push(contact);
+      this.contacts.push(contact);
       console.log(this.user);
       this.authenticateService.getContacts()
         .subscribe(contacts =>

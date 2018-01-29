@@ -47,10 +47,10 @@ export class AuthenticateService {
       .map(res => res.json());
   }
 
-  addContact(user, contact) {
+  addContact(contact) {
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    return this.http.post('/api/contacts', user, contact, {headers: headers})
+    return this.http.post('/api/contacts', contact, {headers: headers})
       .map(res => res.json());
   }
 

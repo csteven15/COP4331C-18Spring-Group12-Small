@@ -28,22 +28,6 @@ export class DashboardComponent implements OnInit {
       lname: this.lname,
       phone: this.phone
     }
-
-    // fields
-    if(!this.validateService.validateAddContact(contact)) {
-    console.log('Please fill in all contact fields');
-      return false;
-    }
-
-    // contact
-    this.authenticateService.addContact(contact).subscribe(data => {
-    if(data.success) {
-      console.log('Added contact');
-      this.router.navigate(['/dashboard']);
-    } else {
-      console.log('Failed to add contact');
-    }
-    })
   }
 
 }
