@@ -22,49 +22,11 @@ const UserSchema = mongoose.Schema({
     type: String,
     required: true
   },
-  contact: {
+  contacts: [{
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Contact',
-    required: false,
-    cfname: {
-      type: String,
-      required: true
-    },
-    clname: {
-      type: String,
-      required: true
-    },
-    cphone: {
-      type: String,
-      required: true
-    }
-  },
-  friends: [
-    {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: 'Friend'
-    }
-  ],
-  friend: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: 'Friend'
-  }
-  /*
-  contacts: [{
-    cfname: {
-      type: String,
-      required: true
-    },
-    clname: {
-      type: String,
-      required: true
-    },
-    cphone: {
-      type: String,
-      required: true
-    }
+    required: false
   }]
-  */
 });
 
 const User = module.exports = mongoose.model('User', UserSchema);

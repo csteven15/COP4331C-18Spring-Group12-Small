@@ -42,7 +42,7 @@ app.use(passport.session());
 
 require('./config/passport')(passport);
 
-app.use('/users', users);
+app.use('/api', users);
 app.use('/api', contacts);
 
 // index
