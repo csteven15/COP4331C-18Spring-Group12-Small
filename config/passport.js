@@ -20,6 +20,7 @@ module.exports = function(passport){
         return done(null, false);
       }
     });
+    /*
     User.getContactById(jwt_payload.data.contact, (err, user) => {
       if(err){
         return done(err, false);
@@ -30,5 +31,6 @@ module.exports = function(passport){
         return done(null, false);
       }
     });
+    */
   }));
 }

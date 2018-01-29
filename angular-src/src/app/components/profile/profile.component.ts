@@ -16,6 +16,7 @@ export class ProfileComponent implements OnInit {
   fname: String;
   lname: String;
   phone: String;
+  username: String;
 
   constructor(
     private validateService: ValidateService,
@@ -43,7 +44,7 @@ export class ProfileComponent implements OnInit {
             }
           }
         }
-      })
+      });
   }
 
   onAddContactSubmit() {
@@ -61,8 +62,8 @@ export class ProfileComponent implements OnInit {
 
     // contact
     this.authenticateService.addContact(contact).subscribe(data => {
-      console.log(data.success);
-      this.contacts.push(contact);
+      this.user.contacts.push(contact);
+      console.log(this.user);
       this.authenticateService.getContacts()
         .subscribe(contacts =>
         this.contacts = contacts);

@@ -9,21 +9,20 @@ export class AuthenticateService {
   authenticateToken: any;
   user: any;
   contact: any;
-  friend: any;
 
   constructor(private http:Http) { }
 
   registerUser(user) {
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    return this.http.post('http://localhost:3000/api/register', user, {headers: headers})
+    return this.http.post('/api/register', user, {headers: headers})
       .map(res => res.json());
   }
 
   authenticateUser(user) {
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    return this.http.post('http://localhost:3000/api/authenticate', user, {headers: headers})
+    return this.http.post('/api/authenticate', user, {headers: headers})
       .map(res => res.json());
   }
 
@@ -32,38 +31,31 @@ export class AuthenticateService {
     this.loadToken();
     headers.append('Authorization', this.authenticateToken);
     headers.append('Content-Type', 'application/json');
-    return this.http.get('http://localhost:3000/api/profile', {headers: headers})
+    return this.http.get('/api/profile', {headers: headers})
       .map(res => res.json());
   }
 
   storeUserData(token, user) {
     localStorage.setItem('id_token', token);
-    localStorage.setItem('http://localhost:3000/user', JSON.stringify(user));
+    localStorage.setItem('/user', JSON.stringify(user));
     this.authenticateToken = token;
     this.user = user;
   }
 
   getContacts() {
-    return this.http.get('http://localhost:3000/api/contacts')
+    return this.http.get('/api/contacts')
       .map(res => res.json());
   }
 
-  addContact(contact) {
+  addContact(user, contact) {
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    return this.http.post('http://localhost:3000/api/contacts', contact, {headers: headers})
+    return this.http.post('/api/contacts', user, contact, {headers: headers})
       .map(res => res.json());
   }
 
   deleteContact(id) {
-    return this.http.delete('http://localhost:3000/api/contacts/' + id)
-      .map(res => res.json());
-  }
-
-  addFriend(friend) {
-    let headers = new Headers();
-    headers.append('Content-Type', 'application/json');
-    return this.http.post('http://localhost:3000/api/profile', friend, {headers: headers})
+    return this.http.delete('/api/contacts/' + id)
       .map(res => res.json());
   }
 

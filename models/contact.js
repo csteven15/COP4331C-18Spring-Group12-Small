@@ -4,15 +4,15 @@ const config = require('../config/database');
 
 // schema
 const ContactSchema = mongoose.Schema({
-  cfname: {
+  fname: {
     type: String,
     required: true
   },
-  clname: {
+  lname: {
     type: String,
     required: true
   },
-  cphone: {
+  phone: {
     type: String,
     required: true
   }
@@ -26,7 +26,6 @@ module.exports.getContactById = function(id, callback){
 
 module.exports.addContact = function(newContact, callback) {
   newContact.save(callback);
-  return callback;
 }
 
 module.exports.returnContact = function() {

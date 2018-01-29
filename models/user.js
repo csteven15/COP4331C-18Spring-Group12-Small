@@ -57,9 +57,10 @@ module.exports.comparePassword = function(candidatePassword, hash, callback){
   });
 }
 
-module.exports.addContact = function(newUser, callback) {
-  newUser.contact = Contact.addContact(callback);
-  newUser.save(callback);
+module.exports.userAddContact = function(newContact, callback) {
+  const query = {username: newContact.username};
+  console.log(query);
+  newContact.save(callback);
 }
 
 module.exports.getContactById = function(id, callback){

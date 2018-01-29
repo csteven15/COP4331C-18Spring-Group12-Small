@@ -1,13 +1,13 @@
 <div class="container">
-  <div *ngIf="profile">
+  <div *ngIf="user">
     <h2 class="page-header">{{user.fname}}</h2>
     <h2>Username: {{user.username}}</h2>
   </div>
 </div>
 
-<div class="container">
+<div *ngIf="user" class="container">
   <div class="jumbotron vertical-center">
-    <h2>Username: {{user.fname}}</h2>
+    <h2 id="username">{{user.fname}}</h2>
     <h2><strong>Add Contacts</strong></h2>
     <form (submit)="onAddContactSubmit()">
       <div class="form-group">
@@ -29,13 +29,13 @@
 
 <hr>
 
-<div class="container">
+<div class="container" *ngIf="user">
   <div *ngFor="let contact of contacts">
     <div class="col-md-3">
       {{contact.fname}}
     </div>
     <div class="col-md-3">
-      {{contact.lanme}}
+      {{contact.lname}}
     </div>
     <div class="col-md-3">
       {{contact.phone}}

@@ -1,3 +1,5 @@
+/*
+
 const express = require('express');
 const router = express.Router();
 const passport = require('passport');
@@ -39,7 +41,8 @@ router.delete('/contacts/:id', (req, res, next) => {
       res.json(result);
     }
   })
-})
+});
 
 
 module.exports = router;
+*/

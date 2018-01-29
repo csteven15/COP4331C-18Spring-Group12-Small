@@ -5,7 +5,6 @@ const jwt = require('jsonwebtoken');
 const config = require('../config/database');
 const User = require('../models/user');
 const Contact = require('../models/contact');
-const friendModel = require('../models/friend');
 const mongoose = require('mongoose');
 
 // register
@@ -68,6 +67,55 @@ router.post('/authenticate', (req, res, next) => {
     });
   });
 });
+
+//profile
+router.get('/profile', passport.authenticate('jwt', {session:false}), (req, res, next) => {
+  res.json({user: req.user});
+});
+
+
+
+// Contacts
+
+// get
+router.get('/contacts', (req, res, next) => {
+  Contact.find(function(err, contacts) {
+    res.json(contacts);
+  });
+});
+
+// add
+router.post('/contacts', (req, res, next) => {
+  let newContact = new Contact({
+    fname: req.body.fname,
+    lname: req.body.lname,
+    phone: req.body.phone
+  });
+
+  console.log(newContact);
+
+  User.userAddContact(newContact, (err, contact) => {
+    if(err){
+      res.json({success: false, msg: 'Failed to register contact'});
+    } else {
+      res.json({success: true, msg: 'Contact registered'});
+    }
+  });
+
+});
+
+// delete
+router.delete('/contacts/:id', (req, res, next) => {
+  Contact.remove({_id: req.params.id}, function(err, result) {
+    if(err){
+      res.json(err);
+    } else {
+      res.json(result);
+    }
+  })
+});
+
+
 
 
 module.exports = router;
