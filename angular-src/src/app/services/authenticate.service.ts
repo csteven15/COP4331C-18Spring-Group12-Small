@@ -15,14 +15,14 @@ export class AuthenticateService {
   registerUser(user) {
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    return this.http.post('/api/register', user, {headers: headers})
+    return this.http.post('http://localhost:3000/api/register', user, {headers: headers})
       .map(res => res.json());
   }
 
   authenticateUser(user) {
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    return this.http.post('/api/authenticate', user, {headers: headers})
+    return this.http.post('http://localhost:3000/api/authenticate', user, {headers: headers})
       .map(res => res.json());
   }
 
@@ -31,7 +31,7 @@ export class AuthenticateService {
     this.loadToken();
     headers.append('Authorization', this.authenticateToken);
     headers.append('Content-Type', 'application/json');
-    return this.http.get('/api/profile', {headers: headers})
+    return this.http.get('http://localhost:3000/api/profile', {headers: headers})
       .map(res => res.json());
   }
 
@@ -43,19 +43,19 @@ export class AuthenticateService {
   }
 
   getContacts() {
-    return this.http.get('/api/contacts')
+    return this.http.get('http://localhost:3000/api/contacts')
       .map(res => res.json());
   }
 
   addContact(contact) {
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    return this.http.post('/api/contacts', contact, {headers: headers})
+    return this.http.post('http://localhost:3000/api/contacts', contact, {headers: headers})
       .map(res => res.json());
   }
 
   deleteContact(id) {
-    return this.http.delete('/api/contacts/' + id)
+    return this.http.delete('http://localhost:3000/api/contacts/' + id)
       .map(res => res.json());
   }
 
