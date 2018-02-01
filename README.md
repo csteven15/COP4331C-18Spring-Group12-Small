@@ -36,7 +36,7 @@ https://cryptic-brook-85759.herokuapp.com
 
 ## How to use
 
-### Currently, our application is programmed for deployment. To run:
+### Currently, our application is programmed for deployment. To run the app:
   1. Go to angular-src/src/app/services/authenticate.service.ts and change
 
   "return this.http.post('/api/register', user, {headers: headers})"
@@ -56,11 +56,13 @@ https://cryptic-brook-85759.herokuapp.com
   2. Install angular/cli in the angular-src directory by:
   "npm install @angular/cli --save"
 
-  3. Open two terminals and:
-  in the COP4331C-18Spring-Group12-Small directory, run "node app.js"
+  3. On the COP4331C-18Spring-Group12-Small-master and COP4331C-18Spring-Group12-Small-master/angular-src directory run "npm install"
 
-  [OPTIONAL]: in the COP4331C-18Spring-Group12-Small/angular-src directory, run "ng build"
-  in the COP4331C-18Spring-Group12-Small/angular-src directory, run "ng serve"
+  4. Open two terminals and:
+  in the COP4331C-18Spring-Group12-Small-master directory, run "node app.js"
+
+  [OPTIONAL]: in the COP4331C-18Spring-Group12-Small-master/angular-src directory, run "ng build"
+  in the COP4331C-18Spring-Group12-Small-master/angular-src directory, run "ng serve"
 
 ## Database
 
