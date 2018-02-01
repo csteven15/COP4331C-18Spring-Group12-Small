@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="jumbotron vertical-center">
+    <h2><strong>Registration</strong></h2>
+<form (submit)="onRegisterSubmit()">
+  <div class="form-group">
+    <h5 class="text">First Name</h5>
+    <input type="text" class="form-control" placeholder="John" [(ngModel)]="fname" name="fname">
+  </div>
+  <div class="form-group">
+    <h5 class="text">Last Name</h5>
+    <input type="text" class="form-control" placeholder="Doe" [(ngModel)]="lname" name="lname">
+  </div>
+  <div class="form-group">
+    <h5 class="text">Email Address</h5>
+    <input type="email" class="form-control" aria-describedby="emailHelp" placeholder="Enter email" [(ngModel)]="email" name="email">
+  </div>
+  <div class="form-group">
+    <h5 class="text">Username</h5>
+    <input type="text" class="form-control" placeholder="username" [(ngModel)]="username" name="username">
+  </div>
+  <div class="form-group">
+    <h5 class="text">Password</h5>
+    <input type="password" class="form-control" placeholder="Password" [(ngModel)]="password" name="password">
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+</div>
+</div>

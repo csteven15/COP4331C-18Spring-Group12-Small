@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="jumbotron vertical-center">
+
+<form class="form-signin form-group" (submit)="onLoginSubmit()">
+      <h2 class="form-signin-heading"><strong>Login</strong></h2>
+      <div class="form-group">
+        <h5 class="text">Username</h5>
+        <input type="text" id="inputEmail" class="form-control" placeholder="enter username" required autofocus [(ngModel)]="username" name="username">
+      </div>
+      <div class="form-group">
+        <h5 class="text">Password</h5>
+        <input type="password" id="inputPassword" class="form-control" placeholder="enter password" required [(ngModel)]="password" name="password">
+      </div>
+        <button class="btn btn-lg btn-primary " type="submit">Sign in</button>
+      </form>
+</div>
+</div>

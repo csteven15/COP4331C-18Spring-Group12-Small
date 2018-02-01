@@ -1,0 +1,86 @@
+[
+	{
+		'userId' :  'jmedina',
+		'password' : 'Cop4331',
+		'firstname' : 'Jose',
+		'lastname' : 'Medina',
+		'phoneNumber' : 7725212191,
+		'email' : 'jm09@knights.ucf.edu',
+		'contacts' : [
+			{ 'contactId' : 'professor0001', 'userId' : 'jmedina', 'firstname' : 'Rick', 'lastname' : 'Leinecker', 'phoneNumber' : 8326659601, 'email' : 'leinecker.richard@ucf.edu' },
+			{ 'contactId' : 'Pall_MOr11', 'userId' : 'jmedina', 'firstname' : 'Pallavi', 'lastname' : 'Morcant', 'phoneNumber' : 4434936037, 'email' : 'Pall_MOr11@gmail.com' },
+			{ 'contactId' : 'bugBunny49', 'userId' : 'jmedina', 'firstname' : 'Bunny', 'lastname' : 'Headley', 'phoneNumber' : 2257549753, 'email' : 'BugsBunny@gmail.com' },
+			{ 'contactId' : 'DoubleE1312', 'userId' : 'jmedina', 'firstname' : 'Elouise', 'lastname' : 'Eldon', 'phoneNumber' : 4052509186, 'email' : 'DoubleE1312@yahoo.comcomcomcom' },
+			{ 'contactId' : '10Burrr17', 'userId' : 'jmedina', 'firstname' : 'Gucci', 'lastname' : 'Mane', 'phoneNumber' : 5714285625, 'email' : 'Guwop1017@knights.ucf.edu' },
+			{ 'contactId' : 'quarantinedDust', 'userId' : 'jmedina', 'firstname' : 'Laurel', 'lastname' : 'Halo', 'phoneNumber' : 6039737689, 'email' : 'quarantinedDust@outlook.com' }
+		]
+	},
+	{
+		'userId' :  'LoneB0t',
+		'password' : 'Test-2018',
+		'firstname' : 'Steven',
+		'lastname' : 'Chen',
+		'phoneNumber' : 3057478474,
+		'email' : '_chenster@hotmail.com',
+		'contacts' : [
+			{ 'contactId' : 'ASato2018', 'userId' : 'LoneB0t', 'firstname' : 'Akane', 'lastname' : 'Sato', 'phoneNumber' : 4013052463, 'email' : 'ASato@ucf.edu' },
+			{ 'contactId' : 'maybe8080', 'userId' : 'LoneB0t', 'firstname' : 'Brooklyn', 'lastname' : 'Mei', 'phoneNumber' : 7756893234, 'email' : 'maybe8080@outlook.com' },
+			{ 'contactId' : 'ToothpasteSuburb', 'userId' : 'LoneB0t', 'firstname' : 'Milo', 'lastname' : 'Norman', 'phoneNumber' : 7722057812, 'email' : 'ToothpasteSuburb@gmail.com' },
+			{ 'contactId' : 'PikaCatcher2000', 'userId' : 'LoneB0t', 'firstname' : 'Ash', 'lastname' : 'Ketchum', 'phoneNumber' : 2056895090, 'email' : 'PikaCatcher2000@outlook.com' }
+		]
+	},
+	{
+		'userId' :  'obviousRaptor',
+		'password' : 'N0tNu11',
+		'firstname' : 'Chrisopher',
+		'lastname' : 'Donoso',
+		'phoneNumber' : 2017089177,
+		'email' : 'obviRaptor95@yahoo.comcom',
+		'contacts' : [
+			{ 'contactId' : 'Tsai_Rich', 'userId' : 'obviousRaptor', 'firstname' : 'Richard', 'lastname' : 'Tsai', 'phoneNumber' : 3192234813, 'email' : 'Tsai_Rich@gmail.com' },
+			{ 'contactId' : '__NoHonor__', 'userId' : 'obviousRaptor', 'firstname' : 'Honor', 'lastname' : 'Normina', 'phoneNumber' : 4104731876, 'email' : '__NoHonor__@ucf.edu' },
+			{ 'contactId' : 'KeroKero2017', 'userId' : 'obviousRaptor', 'firstname' : 'Sarah', 'lastname' : 'Bonito', 'phoneNumber' : 4105882520, 'email' : 'KeroKero2017@yahoo.com' },
+			{ 'contactId' : 'SeanNopal', 'userId' : 'obviousRaptor', 'firstname' : 'Sean', 'lastname' : 'Nopal', 'phoneNumber' : 5863627586, 'email' : 'SeanNopal@yahoo.com' },
+			{ 'contactId' : 'fakeUser', 'userId' : 'obviousRaptor', 'firstname' : 'Marinda', 'lastname' : 'Dominique', 'phoneNumber' : 2402552115, 'email' : 'fakeemail@mail.com' },
+			{ 'contactId' : 'Strange.phases43', 'userId' : 'obviousRaptor', 'firstname' : 'Angel', 'lastname' : 'Olsen', 'phoneNumber' : 3196952035, 'email' : 'Strange.phases43@ucf.edu' },
+			{ 'contactId' : 'clarity_clarence', 'userId' : 'obviousRaptor', 'firstname' : 'Rina', 'lastname' : 'Sawayama', 'phoneNumber' : 2184318158, 'email' : 'clarity_clarence@ucf.edu' },
+			{ 'contactId' : 'IrishLad93', 'userId' : 'obviousRaptor', 'firstname' : 'Reggie', 'lastname' : 'Snow', 'phoneNumber' : 5704005000, 'email' : 'IrishLad93@yahoo.com' },
+			{ 'contactId' : 'MasteratWork', 'userId' : 'obviousRaptor', 'firstname' : 'Louie', 'lastname' : 'Vega', 'phoneNumber' : 6144691667, 'email' : 'MasteratWork@mail.com' }
+		]
+	},
+	{
+		'userId' :  'Pmoney',
+		'password' : '1234567890',
+		'firstname' : 'Isaias',
+		'lastname' : 'Perez',
+		'phoneNumber' : 5074824068,
+		'email' : 'P_mula@gmail.com',
+		'contacts' : [
+			{ 'contactId' : 'killerwhale68', 'userId' : 'Pmoney', 'firstname' : 'Will', 'lastname' : 'Toledo', 'phoneNumber' : 2198815051, 'email' : 'killerwhale68@gmail.com' },
+			{ 'contactId' : 'lastformula08', 'userId' : 'Pmoney', 'firstname' : 'Romeo', 'lastname' : 'Santos', 'phoneNumber' : 5632128260, 'email' : 'lastformula08@outlook.com' },
+			{ 'contactId' : 'morebeerWithFear', 'userId' : 'Pmoney', 'firstname' : 'Lee', 'lastname' : 'Ving', 'phoneNumber' : 5166629966, 'email' : 'morebeerWithFear@yahoo.com' },
+			{ 'contactId' : 'thisIsNotAPerson479', 'userId' : 'Pmoney', 'firstname' : 'Carina', 'lastname' : 'Maleah', 'phoneNumber' : 4692398468, 'email' : 'thisIsNotAPerson479@mail.com' },
+			{ 'contactId' : 'atmosphere', 'userId' : 'Pmoney', 'firstname' : 'Andrei', 'lastname' : 'Tarkovsky', 'phoneNumber' : 8329552926, 'email' : 'atmosphere@mail.com' },
+			{ 'contactId' : 'Stew.Anne', 'userId' : 'Pmoney', 'firstname' : 'Anne', 'lastname' : 'Stew', 'phoneNumber' : 6602562543, 'email' : 'Stew.Anne@gmail.com' },
+			{ 'contactId' : 'minor_threat82', 'userId' : 'Pmoney', 'firstname' : 'Ian', 'lastname' : 'Mckaye', 'phoneNumber' : 3312048032, 'email' : 'minor_threat82@mail.com' },
+			{ 'contactId' : 'JMika', 'userId' : 'Pmoney', 'firstname' : 'Janette', 'lastname' : 'Mika', 'phoneNumber' : 2544499064, 'email' : 'JMika@outlook.com' },
+			{ 'contactId' : 'wolfe_1893', 'userId' : 'Pmoney', 'firstname' : 'Wolfe', 'lastname' : 'Cyrus', 'phoneNumber' : 6174525108, 'email' : 'wolfe_1893@outlook.com' },
+			{ 'contactId' : 'orlando.tangerine', 'userId' : 'Pmoney', 'firstname' : 'Sean', 'lastname' : 'Baker', 'phoneNumber' : 5704355976, 'email' : 'orlando.tangerine@knights.ucf.edu' }
+		]
+	},
+	{
+		'userId' :  'Scared-Crocodile99',
+		'password' : 'ThisIsAPassword',
+		'firstname' : 'Huey',
+		'lastname' : 'Padua',
+		'phoneNumber' : ,
+		'email' : 'email01@mail.com',
+		'contacts' : [
+			{ 'contactId' : 'r0ckstar1980', 'userId' : 'Scared-Crocodile99', 'firstname' : 'Darby', 'lastname' : 'Crash', 'phoneNumber' : 5555555555, 'email' : 'r0ckstar1980@yahoo.com' },
+			{ 'contactId' : 'yeezySeas0nn', 'userId' : 'Scared-Crocodile99', 'firstname' : 'Kanye', 'lastname' : 'West', 'phoneNumber' : 6576007569, 'email' : 'yeezySeas0nn@gmail.com' },
+			{ 'contactId' : 'sheiquailewo7000', 'userId' : 'Scared-Crocodile99', 'firstname' : 'Teresa', 'lastname' : 'Teng', 'phoneNumber' : 6126549118, 'email' : 'sheiquailewo7000@ucf.edu' },
+			{ 'contactId' : 'professor0001', 'userId' : 'Scared-Crocodile99', 'firstname' : 'Rick', 'lastname' : 'Leinecker', 'phoneNumber' : 8326659601, 'email' : 'leinecker.richard@ucf.edu' },
+			{ 'contactId' : 'HIGHENERGY', 'userId' : 'Scared-Crocodile99', 'firstname' : 'Evelyn', 'lastname' : 'Thomas', 'phoneNumber' : 3125653269, 'email' : 'HIGHENERGY@knights.ucf.edu' }
+		]
+	}
+]
