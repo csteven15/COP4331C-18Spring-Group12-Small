@@ -6,12 +6,6 @@ This is an online contact manager. A user is able to register an account, log in
 
 https://cryptic-brook-85759.herokuapp.com
 
-## Progress
-
-  To see progress of the build, look at our commits on github at https://github.com/csteven15/COP4331C-18Spring-Group12-Small
-
-  We have 3 branches: master, test, and steven.
-  Most of the commits are done in the test branch and later transferred to the master branch.
 
 ### Current Issues
 
